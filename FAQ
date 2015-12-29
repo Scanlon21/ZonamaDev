@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWGEMU DevEnv FAQ</title>
+	</head>
+	<body>
+		<h1>SWGEmu DevEnv FAQ</h1>
+      <h3>How do I enable the admin commands?</h3>
+        <p>To enable these features in the client you will need to edit the user.cfg file in the c:\SWGEMU folder to add these 4 lines:</p>
+          <p>[ClientGame]
+          <p>0fd345d9 = true
+          <p>[ClientUserInterface]
+          <p>debugExamine=1
+        <p>If  the user.cfg file doesn’t exist, simply copy swgemu.cfg and rename it as user.cfg. Then, replace the contents of the new user.cfg with the contents of the table above.</p>
+        <p>You might also need to add a line in swgemu.cfg to tell the client to use the new user.cfg file:</p>
+          <p>.include "swgemu_login.cfg"
+          <p>.include "swgemu_live.cfg"
+          <p>.include "swgemu_preload.cfg"
+          <p>.include "options.cfg"
+          <p>.include "user.cfg" <-- THIS LINE MIGHT BE MISSING or Commented out
+      <p>Once the config files are done, totally shut down your client (if running) and restart it.</p>
+    <h3>How do I create an admin account?</h3>
+      <p>In MySQL Workbench, go to Schemata--->swgemu--->accounts--->go to admin_level---> change 0 to 15--->Applychange--->Execute--->Then do build config again.</p>
+    <h3>How do I shutdown the server?</h3>
+      <p>In the active terminal enter:
+      <p>save (Wait for save to complete)
+      <p>exit
+      <p>Cntl-c
+    <h3>How do i start the server?</h3>
+      <p>Oprn a terminal and enter:
+      <p>cd MMOCoreOrb/bin
+      <p>./core3
+<h3>How do I sign in to Gerrit? I keep getting a server error when I try to login?</h3>
+<h3>How do I connect to my dev env server with Launchpad?</h3>
+<h3>How do I find the server IP address?</h3>
+<h3>How do I enable other planets? </h3>
+<h3>How do I edit config.lua?</h3>
+	</body>
+</html>
